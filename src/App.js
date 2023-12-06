@@ -1,23 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import { NewTodo } from './components/NewTodo';
+import { View } from './components/View';
+import { Sidebar } from './components/Sidebar';
+import { useState } from 'react';
+import { Button } from './components/Button';
+
 
 function App() {
+  const [list, setList] = useState([
+    {
+      id: 1,
+      title: 'テスト勉強',
+      content: '勉強',
+    },
+    {
+      id: 2,
+      title: 'aaa',
+      content: 'ccc',
+    },
+  ])
+  const [selectedId, setSelectedId] = useState(1)
+  const [mode, setMode] = useState('view') // ['view', 'new']
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Sidebar selectedId={selectedId} list={list} setList={setList} setSelectedMode={setSelectedId} setSelectedId={setSelectedId} callback={() => {
+        setMode('new')
+      }} />
+      <div style={{
+        position: 'absolute',
+        top: 30,
+        left: 400,
+      }}>
+        {
+          mode === 'view' ? <View list={list} selectedId={selectedId} setList={setList} /> : <NewTodo list={list} setList={setList} />
+        }
+      </div>
     </div>
   );
 }
