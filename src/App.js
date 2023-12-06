@@ -8,13 +8,8 @@ function App() {
     {
       id: 1,
       title: 'テスト勉強',
-      content: '勉強',
-    },
-    {
-      id: 2,
-      title: 'aaa',
-      content: 'ccc',
-    },
+      content: '数学：32時間物理：13時間英語：12時間',
+    }
   ])
   const [selectedId, setSelectedId] = useState(1)
   const [mode, setMode] = useState('view') // ['view', 'new']
