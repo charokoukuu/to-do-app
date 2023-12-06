@@ -2,8 +2,6 @@ import { NewTodo } from './components/NewTodo';
 import { View } from './components/View';
 import { Sidebar } from './components/Sidebar';
 import { useState } from 'react';
-import { Button } from './components/Button';
-
 
 function App() {
   const [list, setList] = useState([
