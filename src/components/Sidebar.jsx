@@ -6,7 +6,7 @@ export const Sidebar = ({
   setList,
   selectedId,
   callback,
-  setSelectedMode,
+  setMode,
   setSelectedId,
 }) => {
   return (
@@ -40,7 +40,7 @@ export const Sidebar = ({
               selected={item.id === selectedId}
               key={item.id}
               onClick={() => {
-                setSelectedMode("view");
+                setMode("view");
                 setSelectedId(item.id);
               }}
               content={item.title}

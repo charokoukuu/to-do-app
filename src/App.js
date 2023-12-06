@@ -20,7 +20,7 @@ function App() {
   const [mode, setMode] = useState('view') // ['view', 'new']
   return (
     <div>
-      <Sidebar selectedId={selectedId} list={list} setList={setList} setSelectedMode={setSelectedId} setSelectedId={setSelectedId} callback={() => {
+      <Sidebar selectedId={selectedId} list={list} setList={setList} setMode={setMode} setSelectedId={setSelectedId} callback={() => {
         setMode('new')
       }} />
       <div style={{
